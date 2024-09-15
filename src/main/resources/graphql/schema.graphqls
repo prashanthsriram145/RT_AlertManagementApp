@@ -1,0 +1,33 @@
+scalar DateTime
+
+input AlertInput {
+    alertId: String
+    alertDescription: String
+    createdBy: String
+    createdTime: DateTime
+    caseOwner: String
+    dispositionTime: DateTime
+    modifiedBy: String
+    modifiedTime: DateTime
+    assignedTo: String
+}
+
+type Alert {
+    alertId: String
+    alertDescription: String
+    createdBy: String
+    createdTime: DateTime
+    caseOwner: String
+    dispositionTime: DateTime
+    modifiedBy: String
+    modifiedTime: DateTime
+    assignedTo: String
+}
+
+type Query {
+    fetchAllAlerts: [Alert]
+}
+
+type Mutation {
+    createAlert(input: AlertInput): Alert
+}
